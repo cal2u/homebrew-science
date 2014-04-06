@@ -1,13 +1,19 @@
 Homebrew-Science-Apps
 ============
-This repository contains some scietific apps with Appbundles.
+This repository contains some scietific apps and/with related appbundles.
 
 Installing Formulae
 --------------------------------
 Just `brew tap schoeps/homebrew-science-apps` and then `brew install <formula>`.
 
-To install the Octave GUI, do:
-`brew install Octave-App`
+The following apps are available 
+- Octave-App
+- R-App (formula from [joshbode][])
+
+coming soon
+- ngsolve
+- netgen
+- gmsh
 
 You can also install via URL:
 
@@ -20,5 +26,4 @@ Docs
 `brew help`, `man brew`, or the Homebrew [wiki][].
 
 [wiki]:http://wiki.github.com/mxcl/homebrew
-[homebrew-dupes]:https://github.com/Homebrew/homebrew-dupes
-[homebrew-versions]:https://github.com/Homebrew/homebrew-versions
+[joshbode]:https://github.com/joshbode/homebrew-extra
