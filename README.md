@@ -9,11 +9,11 @@ Just `brew tap schoeps/homebrew-science-apps` and then `brew install <formula>`.
 The following apps are available 
 - Octave-App
 - R-App (formula from [joshbode][])
+- Gmsh-App
 
 coming soon
 - ngsolve
 - netgen
-- gmsh
 
 You can also install via URL:
 
