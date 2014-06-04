@@ -6,7 +6,7 @@ class OctaveApp < Formula
   sha1     "98b6b556d882e41939abf79fb117a37309dae52a"
   version  "1"
   
-  #depends_on "octave"
+  depends_on "octave"
 
   keg_only "This is only an empty app bundle calling Octave."
 
