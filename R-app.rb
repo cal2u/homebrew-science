@@ -3,12 +3,12 @@ require 'formula'
 class RApp < Formula
 
   homepage 'http://cran.r-project.org/bin/macosx/'
-  url 'http://cran.r-project.org/bin/macosx/Mac-GUI-1.62.tar.gz'
-  sha1 '3f7ef605076cf537b304a05d979ae44d3cb054ab'
+  url 'http://cran.r-project.org/bin/macosx/Mac-GUI-1.64.tar.gz'
+  sha1 '8c31fb05ad990f0c83e94e1921738e0951624bd9'
 
   head 'https://svn.r-project.org/R-packages/trunk/Mac-GUI'
 
-  depends_on :xcode
+  depends_on :xcode => :build
   depends_on 'r'
 
   if !Hardware.is_64_bit?
@@ -26,8 +26,9 @@ class RApp < Formula
 
   def install
     if !File.exist?("/Library/Frameworks/R.framework")
-      ln_s "#{HOMEBREW_PREFIX}/opt/r/R.framework",
-           "/Library/Frameworks/R.framework"
+      onoe "Framework \"/Library/Frameworks/R.framework\" not found. Create a link:\n\nsudo ln -s \"#{HOMEBREW_PREFIX}/opt/r/R.framework\" \"/Library/Frameworks/R.framework\"\n \n"
+    else 
+      ohai "Linking to Framework \"/Library/Frameworks/R.framework\"."
     end
 
     # ugly hack to get updateSVN script in build to not fail
@@ -39,4 +40,5 @@ class RApp < Formula
 
     prefix.install "build/#{CONFIG}/R.app"
   end
+  
 end
