@@ -16,7 +16,7 @@ class GmshApp < Formula
         system "cp", "Fltk/MacIconsSol.icns", "GMSH.app/Contents/Resources/GmshSol.icns" 
         system "cp", "Fltk/MacIconsPos.icns", "GMSH.app/Contents/Resources/GmshPos.icns" 
         system "cp", "utils/misc/gmsh_app.plist",  "GMSH.app/Contents/Info.plist"
-        inreplace "GMSH.app/Contents/Info.plist", "GMSH_VERSION", Formula['Octave'].version        
+        inreplace "GMSH.app/Contents/Info.plist", "GMSH_VERSION", Formula['gmsh'].version        
         system "ln", "-s", "#{HOMEBREW_PREFIX}/bin/gmsh", "GMSH.app/Contents/MacOS/gmsh"
         system "ln", "-s", "#{HOMEBREW_PREFIX}/bin/onelab.py", "GMSH.app/Contents/MacOS/onelab.py"
         #install appbundle
