@@ -4,7 +4,7 @@ class RApp < Formula
     
     homepage 'http://cran.r-project.org/bin/macosx/'
     url 'http://cran.r-project.org/bin/macosx/Mac-GUI-1.65.tar.gz'
-    md5 'cc8f463f41caf3a10e3fae859c8b68ef'
+    sha256 '1d8643c91e588da9df6e5b9b6471dc42ba8b080f3aab258e5443af5157bde79b'
     
     head 'https://svn.r-project.org/R-packages/trunk/Mac-GUI'
     
