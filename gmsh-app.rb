@@ -2,8 +2,8 @@ require 'formula'
 
 class GmshApp < Formula
   homepage 'http://geuz.org/gmsh'
-  url 'http://geuz.org/gmsh/src/gmsh-2.8.5-source.tgz'
-  sha1 '352671f95816440ddb2099478f3e9f189e40e27a'
+  url "http://geuz.org/gmsh/src/gmsh-2.10.0-source.tgz"
+  sha256 "10db05a73bf7f05f6663ddb3b76045ce9decb28b36ad2e54547861254829a860"
 
   depends_on "gmsh" => "with-fltk"
 
