@@ -3,7 +3,7 @@ require 'formula'
 class RApp < Formula
     
     homepage 'http://cran.r-project.org/bin/macosx/'
-    url 'http://cran.r-project.org/bin/macosx/Mac-GUI-1.66.tar.gz'
+    url 'https://cran.r-project.org/bin/macosx/Mac-GUI-1.70.tar.gz'
     sha256 'dc90e0ebb44d7ffa04fb804a145a477518e38b2e45ddbd64a2bcbd8a5067cc4a'
     
     depends_on :xcode => :build
