@@ -7,7 +7,7 @@ Installing Formulae
 Just `brew tap schoeps/homebrew-science` and then `brew install <formula>`. You may want to execute `brew tap-pin schoeps/homebrew-science` to make sure that you always use the latest software from this repository.
 
 The following formulae are available 
-- GetDP (e.g. `brew install getdp --with-fltk`)
+- GetDP (e.g. `brew install getdp`)
 - Gmsh (e.g. `brew install gmsh --with-fltk`)
 - Octave (e.g. `brew install octave --HEAD --with-gui --with-java`)
 
