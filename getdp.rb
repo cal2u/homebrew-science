@@ -33,6 +33,7 @@ class Getdp < Formula
   end
   depends_on "metis" => :recommended
   depends_on "mumps" => :recommended
+  depends_on :python3 #or should we be conservative?
   depends_on "petsc" => :recommended
   depends_on "slepc" => :recommended
 
