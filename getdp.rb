@@ -2,7 +2,7 @@ class Getdp < Formula
   desc "Open source finite element solver using mixed elements."
   homepage "https://www.geuz.org/getdp/"
   url "https://getdp.info/src/getdp-2.11.2-source.tgz"
-  sha256 "bb32d1d24e110eab209e57701d0754289f62402d5ee6672be596310b1a359997"
+  sha256 "1d929515e4cee849add36ca44212b6423effa9dbccb26e33162fc5447c0cb83e"
   revision 2
   head "https://gitlab.onelab.info/getdp/getdp"
 
