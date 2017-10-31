@@ -1,10 +1,10 @@
 require "formula"
 
 class OctaveApp < Formula
-  homepage "http://www.gnu.org/software/octave/index.html"
-  url      "http://wiki.octave.org/wiki/images/9/96/Icon.png"
-  sha1     "98b6b556d882e41939abf79fb117a37309dae52a"
-  version  "1"
+  url "https://ftp.gnu.org/gnu/octave/octave-4.2.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/octave/octave-4.2.1.tar.gz"
+  sha256 "80c28f6398576b50faca0e602defb9598d6f7308b0903724442c2a35a605333b"
+  version  "2"
   
   depends_on "octave"
 
