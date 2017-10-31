@@ -9,7 +9,7 @@ class RApp < Formula
     depends_on :xcode => :build
     depends_on 'r'
     
-    if !Hardware.is_64_bit?
+    if !Hardware::CPU.is_64_bit?
     onoe "Cannot compile on 32-bit architecture."
 end
 
