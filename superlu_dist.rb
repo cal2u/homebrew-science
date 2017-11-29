@@ -21,13 +21,9 @@ class SuperluDist < Formula
   depends_on :mpi => [:cc, :f77, :f90]
 
   depends_on "parmetis"
-  depends_on "openblas" => OS.mac? ? :optional : :recommended
-  depends_on "veclibfort" if build.without?("openblas") && OS.mac?
+  depends_on "veclibfort"
 
   def install
-    # prevent linking errors on linuxbrew:
-    ENV.deparallelize
-
     dylib_ext = OS.mac? ? "dylib" : "so"
 
     cmake_args = std_cmake_args
@@ -39,7 +35,7 @@ class SuperluDist < Formula
     cmake_args << "-DCMAKE_Fortran_COMPILER=#{ENV["MPIF90"]}"
     cmake_args << "-DCMAKE_INSTALL_PREFIX=#{prefix}"
 
-    blaslib = ((build.with? "openblas") ? "-L#{Formula["openblas"].opt_lib} -lopenblas" : "-L#{Formula["veclibfort"].opt_lib} -lvecLibFort")
+    blaslib = "-L#{Formula["veclibfort"].opt_lib} -lvecLibFort"
     cmake_args << "-DTPL_BLAS_LIBRARIES=#{blaslib}"
 
     mkdir "build" do
