@@ -20,7 +20,7 @@ class Octave < Formula
     depends_on "bison" => :build
     depends_on "icoutils" => :build
     depends_on "librsvg" => :build
-    depends_on "sundials"
+    depends_on "sundials27"
   end
 
   # Complete list of dependencies at https://wiki.octave.org/Building
