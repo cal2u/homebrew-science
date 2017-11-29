@@ -63,10 +63,10 @@ class Octave < Formula
       end
       # Fix bug #49053: retina scaling of figures
       # see https://savannah.gnu.org/bugs/?49053
-      patch do
-        url "https://savannah.gnu.org/support/download.php?file_id=38902"
-        sha256 "d56eff94f9f811845ba3b0897b70cba43c0715a0102b1c79852b72ab10d24e6c"
-      end
+      # patch do
+      #   url "https://savannah.gnu.org/support/download.php?file_id=38902"
+      #   sha256 "d56eff94f9f811845ba3b0897b70cba43c0715a0102b1c79852b72ab10d24e6c"
+      # end
     end
   end
 
