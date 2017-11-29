@@ -67,12 +67,6 @@ class Octave < Formula
         url "https://savannah.gnu.org/support/download.php?file_id=38902"
         sha256 "d56eff94f9f811845ba3b0897b70cba43c0715a0102b1c79852b72ab10d24e6c"
       end
-      # Fix bug #46723: retina scaling of buttons
-      # see https://savannah.gnu.org/bugs/?46723
-      patch :p1 do
-        url "https://savannah.gnu.org/bugs/download.php?file_id=38206"
-        sha256 "8307cec2b84fe546c8f490329b488ecf1da628ce823301b6765ffa7e6e292eed"
-      end
     end
   end
 
