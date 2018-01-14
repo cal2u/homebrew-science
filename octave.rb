@@ -45,7 +45,7 @@ class Octave < Formula
   depends_on "readline"
   depends_on "suite-sparse"
   depends_on "veclibfort"
-  depends_on :java => ["1.6+", :optional]
+  depends_on :java => ["1.8+", :optional]
 
   option "with-qt", "Compile with qt-based graphical user interface"
   if build.with?("qt")
@@ -63,10 +63,10 @@ class Octave < Formula
       end
       # Fix bug #49053: retina scaling of figures
       # see https://savannah.gnu.org/bugs/?49053
-      # patch do
-      #   url "https://savannah.gnu.org/support/download.php?file_id=38902"
-      #   sha256 "d56eff94f9f811845ba3b0897b70cba43c0715a0102b1c79852b72ab10d24e6c"
-      # end
+      patch do
+        url "https://savannah.gnu.org/bugs/download.php?file_id=42901"
+        sha256 "88230830f4b21204a5a38db789d3fc5b65ce5b76cedfcc1aeb6dc19626d782a5"
+      end
     end
   end
 
@@ -82,20 +82,20 @@ class Octave < Formula
       inreplace "liboctave/system/file-stat.cc",
         "inline file_stat::~file_stat () { }", "file_stat::~file_stat () { }"
       inreplace "scripts/java/module.mk",
-        "-source 1.3 -target 1.3", "" # necessary for java >1.8
+        "-source 1.3 -target 1.3", "" 
+      # necessary for java >1.8
+      # allow for recent Oracle Java (>=1.8) without requiring the old Apple Java 1.6
+      # this is more or less the same as in https://savannah.gnu.org/patch/index.php?9439
+      inreplace "libinterp/octave-value/ov-java.cc",
+       "#if ! defined (__APPLE__) && ! defined (__MACH__)", "#if 1" # treat mac's java like others
+      inreplace "configure.ac",
+       "-framework JavaVM", "" # remove framework JavaVM as it requires Java 1.6 after build
     end
 
     # Default configuration passes all linker flags to mkoctfile, to be
     # inserted into every oct/mex build. This is unnecessary and can cause
     # cause linking problems.
     inreplace "src/mkoctfile.in.cc", /%OCTAVE_CONF_OCT(AVE)?_LINK_(DEPS|OPTS)%/, '""'
-
-    # allow for recent Oracle Java (>=1.8) without requiring the old Apple Java 1.6
-    # this is more or less the same as in https://savannah.gnu.org/patch/index.php?9439
-    inreplace "libinterp/octave-value/ov-java.cc",
-      "#if ! defined (__APPLE__) && ! defined (__MACH__)", "#if 1" # treat mac's java like others
-    inreplace "configure.ac",
-      "-framework JavaVM", "" # remove framework JavaVM as it requires Java 1.6 after build
 
     args = %W[
       --prefix=#{prefix}
